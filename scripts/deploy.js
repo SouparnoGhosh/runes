@@ -1,12 +1,26 @@
 const hre = require("hardhat");
 
 const main = async () => {
-  const Transactions = await hre.ethers.getContractFactory("Transactions");
-  const transactions = await Transactions.deploy();
+  const [owner, ...randomPeople] = await hre.ethers.getSigners();
+  const accountBalance = await owner.getBalance();
 
-  await transactions.deployed();
+  const RuneContractFactory = await hre.ethers.getContractFactory("Runes");
+  const runeContract = await RuneContractFactory.deploy();
 
-  console.log("Transactions deployed to:", transactions.address);
+  await runeContract.deployed();
+
+  console.log(`Owner Address: ${owner.address}`);
+  console.log(`Account Balance of Owner: ${accountBalance}`);
+  console.log(`Contract deployed to: ${runeContract.address}`);
+
+  let runeCount = await runeContract.getTotalRunes();
+  console.log(`Rune Count: ${runeCount}`);
+
+  let runeTxn = await runeContract.rune();
+  await runeTxn.wait();
+
+  runeCount = await runeContract.getTotalRunes();
+  console.log(`Rune Count: ${runeCount}`);
 };
 
 const runMain = async () => {
