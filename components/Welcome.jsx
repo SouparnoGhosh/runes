@@ -28,7 +28,9 @@ export default function Welcome() {
   return (
     <div className="flex w-full items-center justify-center">
       <div className="flex flex-col items-start justify-between py-12 px-4 md:p-20 mf:flex-row">
+        {/* LHS portion has button and grid*/}
         <div className="flex flex-1 flex-col items-start justify-start mf:mr-10">
+          {/* The top headings */}
           <h1 className="text-gradient py-1 text-3xl text-white sm:text-5xl">
             Send Crypto <br /> across the world
           </h1>
@@ -36,6 +38,8 @@ export default function Welcome() {
             Explore the crypto world. Buy and sell cryptocurrencies easily on
             Krypt.
           </p>
+
+          {/* Creates connect wallet button */}
           {!currentAccount && (
             <button
               type="button"
@@ -45,6 +49,8 @@ export default function Welcome() {
               Connect Wallet
             </button>
           )}
+
+          {/* Creating the 6 cell grid on LHS lower side */}
           <div className="grid-col-2 mt-10 grid w-full sm:grid-cols-3">
             <div className={`rounded-t-xl sm:rounded-tr-none ${commonStyles}`}>
               Reliability
@@ -59,6 +65,7 @@ export default function Welcome() {
           </div>
         </div>
 
+        {/* Creating the form on RHS */}
         <div className="mt-10 flex w-full flex-1 flex-col items-center justify-start mf:mt-0">
           <div className="eth-card .white-glassmorphism my-5 flex h-40 w-full flex-col items-start justify-end rounded-xl p-3 sm:w-72 ">
             <div className="flex h-full w-full flex-col justify-between">
