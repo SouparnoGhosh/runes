@@ -2,7 +2,13 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
-.gradient-text {
+@layer components {
+  .button {
+    @apply gradient-button  m-3 rounded-lg p-2 px-4 text-3xl font-semibold tracking-[-0.02rem] text-white  shadow-md transition-all delay-[200ms] ease-in-out hover:rounded-2xl;
+  }
+}
+
+.gradient-heading {
   background: rgb(58, 158, 180);
   background: -webkit-linear-gradient(
     -10deg,
@@ -14,9 +20,30 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* .gradient-text {
-  font-size: 72px;
-  background: -webkit-linear-gradient(#eee, #333);
-  -webkit-background-clip: text;
+.gradient-text {
+  background: rgb(229, 132, 163);
+  background: linear-gradient(
+    60deg,
+    rgb(238, 93, 139) 0%,
+    rgba(213, 79, 183, 1) 20%,
+    rgba(205, 108, 237, 1) 40%,
+    rgba(146, 117, 233, 1) 60%,
+    rgba(72, 128, 245, 1) 80%,
+    rgba(5, 114, 219, 1) 100%
+  );
+  background-clip: text;
   -webkit-text-fill-color: transparent;
-} */
+}
+
+.gradient-button {
+  background: rgb(58, 158, 180);
+  background: linear-gradient(
+    40deg,
+    rgb(177, 48, 16) 0%,
+    rgb(240, 95, 196) 20%,
+    rgba(205, 108, 237, 1) 40%,
+    rgba(146, 117, 233, 1) 60%,
+    rgba(72, 128, 245, 1) 80%,
+    rgba(5, 114, 219, 1) 100%
+  );
+}

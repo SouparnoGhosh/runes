@@ -19,6 +19,9 @@ const main = async () => {
   let runeTxn = await runeContract.rune();
   await runeTxn.wait();
 
+  let runeTxn2 = await runeContract.rune();
+  await runeTxn2.wait();
+
   runeCount = await runeContract.getTotalRunes();
   console.log(`Rune Count: ${runeCount}`);
 };
