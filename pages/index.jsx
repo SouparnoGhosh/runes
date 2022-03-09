@@ -3,7 +3,7 @@
 import Head from "next/head";
 import { useState, useEffect } from "react";
 import { ethers } from "ethers";
-import runes from "../artifacts/contracts/Runes.sol/Runes.json";
+import runes from "../utils/Runes.json";
 
 export default function Home() {
   const [currentAccount, setCurrentAccount] = useState("");
@@ -94,7 +94,7 @@ export default function Home() {
       <div className="gradient-heading my-1 p-2 text-6xl font-extrabold tracking-tighter">
         Cool Waving App
       </div>
-      <button className="button " onClick={wave}>
+      <button className="button" onClick={wave}>
         Wave at Me
       </button>
       {currentAccount ? (
